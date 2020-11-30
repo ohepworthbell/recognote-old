@@ -1,0 +1,78 @@
+// Notewheel
+.gamearea {
+  position: relative;
+  width: 75%;
+  max-width: 240px;
+  box-sizing: border-box;
+  background: $lightbg;
+  border-radius: 100%;
+  @extend %shadowbox;
+  text-align: center;
+  margin: 0 auto;
+  touch-action: none;
+
+  canvas {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    animation: rotateCanvas linear 12s infinite;
+    }
+
+  button {
+    position: absolute;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 100%;
+
+    &,
+    &:focus,
+    &:active {
+      outline: none;
+      }
+    }
+
+  .main-game-button svg {
+    width: 2.3rem;
+    height: 2.3rem;
+    }
+
+  $answer-size: 2.8rem;
+
+  .answer {
+    display: block;
+    width: $answer-size;
+    height: $answer-size;
+    padding: 0;
+    margin: #{-$answer-size / 2} 0 0 #{-$answer-size / 2};
+    text-align: center;
+    line-height: $answer-size;
+    font-size: 1.1em;
+    font-family: $font;
+    font-weight: lighter;
+    color: #fff;
+
+    &:active,
+    &:focus {
+      animation: fadeOutBg 1s ease-out;
+      }
+    }
+
+  @keyframes rotateCanvas {
+    to {
+      transform: rotate(360deg);
+      }
+    }
+  }
+
+@keyframes fadeOutBg {
+  0% {
+    background: lighten($background, 12%);
+  }
+  50% {
+    background: lighten($background, 12%);
+  }
+}

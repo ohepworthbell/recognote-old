@@ -1,0 +1,17 @@
+// Text and copy
+p {
+  margin: 0;
+  line-height: 1.6em;
+
+  &:first-child {
+    margin-top: 0;
+    }
+
+  &:last-child {
+    margin-bottom: 0;
+    }
+  }
+
+a {
+  color: inherit;
+  }

@@ -1,0 +1,81 @@
+// Simple toggle option
+$toggle-size: 30px;
+
+[data-toggle] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: $toggle-size;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0.3em 0;
+
+  input[type=checkbox] {
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+
+  svg {
+    display: block;
+    margin: 0 1rem;
+    width: #{ $toggle-size * (36 / 22) };
+    height: $toggle-size;
+    stroke-width: 0;
+    fill: $green;
+    order: 2;
+
+    rect {
+      fill: $input-bg;
+      stroke-width: 1;
+      stroke: transparent;
+      transition: stroke 0.15s;
+      }
+
+    circle {
+      transition: transform 0.12s, fill 0.12s;
+      }
+    }
+
+  &:hover svg rect,
+  &:active svg rect {
+    fill: lighten($input-bg, 4%);
+    }
+
+  input:checked + svg circle {
+    transform: translate(-14px, 0);
+    }
+
+  span {
+    display: block;
+    margin: 0;
+    line-height: $toggle-size;
+    color: lighten($background, 35%);
+    font-weight: normal;
+    order: 1;
+    transition: color 0.15s;
+
+    + span {
+      order: 3;
+      }
+    }
+
+  // Highlight correct span
+  input:checked + svg + span,
+  input:not(:checked) + svg + span + span {
+    color: #fff;
+    animation: toggle-wiggle 0.3s ease-out;
+    }
+  }
+
+// Keyframes for animation
+@keyframes toggle-wiggle {
+  50% {
+    transform: scale(1.05);
+  }
+}

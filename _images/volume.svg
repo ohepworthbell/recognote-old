@@ -1,0 +1,42 @@
+<svg id="volume" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      path {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+        fill-rule: evenodd;
+        fill: none;
+        }
+
+      .speaker {
+        fill: #fff;
+        }
+
+      .waves {
+        fill: transparent;
+        stroke-dasharray: 50px;
+        stroke-dashoffset: -50px;
+        animation: pulseWaves 5s ease-in-out infinite;
+        }
+
+      .reverse {
+        animation-direction: reverse;
+        }
+
+
+      @keyframes pulseWaves {
+        10%, 90% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: 50px;
+        }
+      }
+    </style>
+  </defs>
+  <path d="m7.16003,18.856l-6.17,0l0,-7.711l6.17,0l7.17,-6.33l0,20.37l-7.17,-6.329z" class="speaker"/>
+  <path d="m19.87003,19.158a4.513,4.513 0 0 0 0,-8.546m-0.11,14.107" class="waves"/>
+  <path d="m19.75135,5.051a9.927,9.927 0 0 1 0,19.668" class="waves reverse"/>
+</svg>

@@ -1,0 +1,27 @@
+// Extends
+
+// Shadowed box
+%shadowbox {
+  background: $lightbg;
+  box-shadow: 0 0 65px rgba(#000, 0.1);
+  }
+
+ // Small text
+%smalltext {
+  color: $lightgrey;
+  font-size: 8.5px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: normal;
+  }
+
+// Hide tap highlight on webkit
+%no-tap-highlight {
+  &,
+  &:focus,
+  &:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    }
+  }

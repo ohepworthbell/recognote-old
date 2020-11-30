@@ -1,0 +1,16 @@
+// Select your instrument toggle
+
+.instrument-select {
+  margin: 0.3rem auto;
+  background: lighten($background, 3%);
+  padding: 1rem;
+  overflow: auto;
+  overflow-y: hidden;
+  border-radius: 0.3em;
+  line-height: 1.5em;
+  max-width: 20em;
+
+  // Coming soon message
+  color: lighten($input-bg, 25%);
+  font-weight: normal;
+  }

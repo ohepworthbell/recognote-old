@@ -1,0 +1,9 @@
+// Notewheel
+.button {
+  @extend %button-reset;
+  }
+
+.button,
+a {
+  @extend %no-tap-highlight;
+  }

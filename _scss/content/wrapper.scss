@@ -1,0 +1,25 @@
+// Content wrapper
+body {
+  background: $background url('/img/loading.svg') fixed no-repeat 50% -100%;
+  background-size: 5em 5em;
+
+  &.loading {
+    background-position: 50% calc(50vh - 5rem);
+    pointer-events: none;
+
+    #content {
+      opacity: 0;
+      }
+    }
+  }
+
+#content {
+  transition: opacity 0.3s;
+  }
+  
+.text-content {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  }

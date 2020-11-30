@@ -1,0 +1,100 @@
+.quick-notifications {
+  position: fixed;
+  bottom: 6.5em;
+  right: 1.5em;
+  z-index: 999999999;
+  width: calc(100% - 3em);
+  pointer-events: none;
+
+  > div {
+    position: relative;
+    display: block;
+    max-width: 25em;
+    float: right;
+    clear: both;
+    box-sizing: border-box;
+    padding: 1.2em 1.5em;
+    background: #7e888b;
+    color: #fff;
+    border-radius: 0.3em;
+    box-shadow: 0 3px 5px rgba(#000, 0.1);
+    font-size: 1.1em;
+    line-height: 1.4em;
+    text-align: center;
+    pointer-events: auto;
+    animation: show_notification 0.4s;
+
+    &.hide {
+      opacity: 0;
+      animation: hide_notification 0.15s ease-out;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      pointer-events: none;
+      }
+
+    &.success {
+      background: #3ca43c;
+      }
+
+    &.error {
+      background: #b93939;
+      }
+
+    &.warning {
+      background: #da4e16;
+      }
+
+    + div {
+      margin: 0.4em 0 0;
+      }
+    }
+
+  .notice-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    line-height: 1em;
+    padding: 0.1em;
+    color: rgba(#fff, 0.4);
+    transition: color 0.15s;
+    cursor: pointer;
+    font-size: 1.2em;
+
+    &:hover {
+      color: rgba(#fff, 1);
+      }
+    }
+  }
+
+@keyframes show_notification {
+  0% {
+    opacity: 0;
+    transform: translate(0, 2em);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hide_notification {
+  0% {
+    opacity: 1;
+    transform: none;
+    position: static;
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.05);
+    position: static;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+    position: static;
+  }
+}

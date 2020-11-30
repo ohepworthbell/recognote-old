@@ -1,0 +1,15 @@
+// Mixin for ignoring array of elements
+@mixin not($arr...) {
+  // Create empty return string
+  $notAll: '';
+  
+  // Loop through types in array, append :not()
+  @each $type in $arr {
+    $notAll: $notAll + ':not(#{$type})';
+  }
+  
+  // Return value
+  &#{$notAll} {
+    @content;
+  }
+}

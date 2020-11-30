@@ -1,0 +1,85 @@
+// Form defaults
+$input-bg:       lighten($background, 9%);
+$input-fontsize: 16px;  // Minimum font size for iOS to prevent zooming
+$input-height:   3em;
+$input-error:    rgb(199, 43, 69);
+$input-success:  rgb(35, 194, 62);
+
+// Standardise font sizes/styles across inputs
+input,
+select,
+textarea,
+button {
+  font-family: $font;
+  font-size: $input-fontsize;
+  }
+
+// Input reset
+%input-reset {
+  appearance: none;
+  background-color: $input-bg;
+  border: 0;
+  border-radius: 0.3rem;
+  width: 100%;
+  margin: 0;
+  padding: 0 1.2em;
+  }
+
+// Button reset
+%button-reset {
+  font-family: $font;
+  display: inline-block;
+  background: linear-gradient(to top right, $colour, $green);
+  padding: 0.7em 1.8em;
+  margin: 1.5em 0;
+  font-weight: normal;
+  border-radius: #{$input-height / 2};
+  cursor: pointer;
+
+  &:first-child {
+    margin-top: 0;
+    }
+
+  &:last-child {
+    margin-bottom: 0;
+    }
+  }
+
+select,
+textarea {
+  @extend %input-reset;
+  }
+
+input {
+  @include not('[type=submit]', '[type=button]', '[type=reset]') {
+    @extend %input-reset;
+    }
+  }
+
+button,
+input[type=button],
+input[type=reset] {
+  @extend %button-reset;
+  @extend %no-tap-highlight;
+  }
+
+label {
+  cursor: pointer;
+  @extend %no-tap-highlight;
+  }
+
+// Reset fieldset
+fieldset {
+  display: block;
+  margin: 0.5rem 0;
+
+  legend {
+    display: none;
+
+    // For if used in future
+    margin: 1.5rem 0 0;
+    font-size: 0.9rem;
+    color: lighten($background, 25%);
+    font-weight: normal;
+    }
+  }

@@ -1,0 +1,50 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "A simple webapp framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "gulp": "node ./node_modules/gulp/bin/gulp.js",
+    "emails": "npm run gulp emails"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:ohepworthbell/webapp.git"
+  },
+  "author": "Oliver Hepworth-Bell",
+  "license": "CC-BY-4.0",
+  "homepage": "https://github.com/ohepworthbell/webapp#readme",
+  "devDependencies": {
+    "@akzhan/gulp-juice": "^0.1.6",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "autoprefixer": "^9.5.1",
+    "ava": "^1.4.1",
+    "del": "^4.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-ava": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-tag-include-html": "^1.4.8",
+    "gulp-uglify": "^3.0.2",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "esm": "^3.2.22",
+    "gulp-cli": "^2.2.0"
+  }
+}
